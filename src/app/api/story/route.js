@@ -15,11 +15,17 @@ export async function GET(req, res) {
     const conn = await client.db("story").collection("short_story");
     const result = await conn.find({}).limit(10).toArray();
 
+    // return new Response(JSON.stringify({ result: result }), {
+    //   status: 200,
+    // });
+
+    // console.log(result);
+
     return new Response(JSON.stringify({ result: result }), {
       status: 200,
     });
   } catch (err) {
-    return new Response({ Error: err }, { status: 500 });
+    return new Response(JSON.stringify({ Error: err }), { status: 500 });
   } finally {
     await client.close();
   }

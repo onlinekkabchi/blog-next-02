@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function StoryBox() {
+import Story from "./story";
+
+export default async function StoryBox() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -23,8 +25,38 @@ export default function StoryBox() {
   return (
     <ul>
       {data.map((item, index) => (
-        <p key={index}>{item.storyTitle}</p>
+        <div key={index} className="story--card">
+          <input
+            className="story--input"
+            type="radio"
+            name="story--name"
+            id={item.order}
+          />
+          <label className="story--label" htmlFor={item.order}>
+            <p className="story--title">{item.storyTitle}</p>
+          </label>
+          <div className="story--content">
+            <p className="story--content-text">{item.storyContent}</p>
+            <Tags data={item.storyTag} />
+          </div>
+        </div>
       ))}
     </ul>
+  );
+}
+
+function Tags({ data }) {
+  return (
+    <div className="story--tag-box">
+      {data.length > 0 ? (
+        data.map((item, index) => (
+          <button className="story--tag" key={index}>
+            {item}
+          </button>
+        ))
+      ) : (
+        <button className="story--tag">NOTAG</button>
+      )}
+    </div>
   );
 }

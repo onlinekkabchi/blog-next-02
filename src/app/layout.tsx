@@ -1,6 +1,9 @@
 import Link from "next/link";
+import "../styles/style.css";
 
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,8 +31,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
         </header>
         <h1>한줄괴담 블로그</h1>
-
-        <main>{children}</main>
+        <Suspense fallback={<Loading />}>
+          <main>{children}</main>
+        </Suspense>
       </body>
     </html>
   );
