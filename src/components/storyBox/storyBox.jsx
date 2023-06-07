@@ -23,7 +23,7 @@ export default async function StoryBox() {
   }, []);
 
   return (
-    <ul>
+    <ul className="story-box">
       {data.map((item, index) => (
         <div key={index} className="story--card">
           <input

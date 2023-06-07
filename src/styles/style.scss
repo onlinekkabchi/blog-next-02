@@ -1,1 +1,17 @@
 @import "./page.scss";
+
+nav {
+  a {
+    padding: 3px;
+    margin-inline: 2px;
+    border: 1px solid black;
+    text-decoration: none;
+  }
+}
+
+main {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
