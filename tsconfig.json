@@ -30,7 +30,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    "app/api/story/route.tsx",
+    "app/api/story/route.jsx"
   ],
   "exclude": ["node_modules"]
 }
