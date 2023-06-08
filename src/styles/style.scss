@@ -1,4 +1,9 @@
 @import "./page.scss";
+@import "./font.scss";
+
+body {
+  font-family: "Humanbumsuk";
+}
 
 nav {
   a {
@@ -14,4 +19,13 @@ main {
     margin: 0;
     padding: 0;
   }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 12px;
+  padding-top: 5%;
+  padding-bottom: 10%;
 }

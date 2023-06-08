@@ -31,9 +31,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
         </header>
         <h1>한줄괴담 블로그</h1>
-        <Suspense fallback={<Loading />}>
-          <main>{children}</main>
-        </Suspense>
+
+        <main>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </main>
+        <footer>
+          <p>onlinekkabchi@gmail.com</p>
+          <a href="https://github.com/onlinekkabchi">onlinekkabchi github</a>
+        </footer>
       </body>
     </html>
   );

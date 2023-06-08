@@ -49,6 +49,16 @@ input[type=radio]:checked ~ .story--content {
   transition: opacity 1s;
 }
 
+@font-face {
+  font-family: "Humanbumsuk";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "Humanbumsuk";
+}
+
 nav a {
   padding: 3px;
   margin-inline: 2px;
@@ -59,6 +69,14 @@ nav a {
 main ul {
   margin: 0;
   padding: 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  padding-top: 5%;
+  padding-bottom: 10%;
 }
 
 /*# sourceMappingURL=style.css.map */
