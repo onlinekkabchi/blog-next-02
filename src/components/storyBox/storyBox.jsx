@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default async function StoryBox() {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState([0, 1, 2]);
+  const [page, setPage] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
