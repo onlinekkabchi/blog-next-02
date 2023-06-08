@@ -31,18 +31,12 @@ $--background--transparent-black: rgba(0, 0, 0, 0.8);
     display: none;
   }
   &--card {
-    // background-color: $--background--transparent-black;
     max-width: 500px;
     font-size: 14px;
     line-height: 150%;
-    // border-radius: 10px;
-    // box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid black;
     overflow: hidden;
     margin-bottom: 10px;
-    // &:hover {
-    //   background: rgba(36, 34, 38, 0.1);
-    // }
   }
   &--content {
     height: 0;
