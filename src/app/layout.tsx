@@ -1,11 +1,8 @@
-import Link from "next/link";
 import "../styles/style.css";
 
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import Loading from "./loading";
-
-import ButtonAppBar from "../components/appBar.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`max-w-2xl mx-auto py-10 px-4 antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
       >
         <header>
-          {/* <ButtonAppBar /> */}
+          <h1>짧은괴담블로그</h1>
           {/* <div className="flex items-center justify-between">
             <nav className="ml-auto text-sm font-medium space-x-6">
               <Link href="/">Home</Link>
