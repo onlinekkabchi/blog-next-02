@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Story from "./story.jsx";
 
 export default async function StoryBox() {
   const [data, setData] = useState([]);
@@ -27,30 +28,31 @@ export default async function StoryBox() {
 
   return (
     <>
-      <div className="story-index-box">
-        {page.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </div>
-      <ul className="story-box">
-        {data.map((item, index) => (
-          <div key={index} className="story--card">
-            <input
-              className="story--input"
-              type="radio"
-              name="story--name"
-              id={item.order}
-            />
-            <label className="story--label" htmlFor={item.order}>
-              <p className="story--title">{item.storyTitle}</p>
-            </label>
-            <div className="story--content">
-              <p className="story--content-text">{item.storyContent}</p>
-              <Tags data={item.storyTag} />
-            </div>
-          </div>
-        ))}
-      </ul>
+      {data.map((item, index) => (
+        <li key={index}>
+          <Story
+            order={item.order}
+            title={item.storyTitle}
+            content={item.storyContent}
+            tags={item.storyTag}
+          />
+        </li>
+        // <div key={index} className="story--card">
+        //   <input
+        //     className="story--input"
+        //     type="radio"
+        //     name="story--name"
+        //     id={item.order}
+        //   />
+        //   <label className="story--label" htmlFor={item.order}>
+        //     <p className="story--title">{item.storyTitle}</p>
+        //   </label>
+        //   <div className="story--content">
+        //     <p className="story--content-text">{item.storyContent}</p>
+        //     <Tags data={item.storyTag} />
+        //   </div>
+        // </div>
+      ))}
     </>
   );
 }
