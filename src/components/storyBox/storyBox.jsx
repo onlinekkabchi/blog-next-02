@@ -2,10 +2,33 @@
 
 import { useEffect, useState } from "react";
 import Story from "./story.jsx";
+import { Box } from "@mui/material";
+import Pagination from "@mui/material/Pagination";
+import usePagination from "@mui/material/usePagination/usePagination.js";
 
 export default async function StoryBox() {
+  const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
-  const [page, setPage] = useState([]);
+  const PER_PAGE = 10;
+  const count = Math.ceil(data.length / PER_PAGE);
+
+  const _DATA = usePagination(data, PER_PAGE);
+
+  // const handleChange = (e, p) => {
+  //   setPage(p);
+  //   _DATA.jump(p);
+  // };
+
+  const handleData = async () => {
+    try {
+      await fetch("/api/story")
+        // .then((res) => console.log(res));
+        .then((res) => res.json())
+        .then((res) => setData(res.result));
+    } catch (error) {
+      console.log("Error:", error.message);
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,53 +45,38 @@ export default async function StoryBox() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    setPage([1, 2]);
-  }, []);
-
   return (
     <>
-      {data.map((item, index) => (
-        <li key={index}>
-          <Story
-            order={item.order}
-            title={item.storyTitle}
-            content={item.storyContent}
-            tags={item.storyTag}
-          />
-        </li>
-        // <div key={index} className="story--card">
-        //   <input
-        //     className="story--input"
-        //     type="radio"
-        //     name="story--name"
-        //     id={item.order}
-        //   />
-        //   <label className="story--label" htmlFor={item.order}>
-        //     <p className="story--title">{item.storyTitle}</p>
-        //   </label>
-        //   <div className="story--content">
-        //     <p className="story--content-text">{item.storyContent}</p>
-        //     <Tags data={item.storyTag} />
-        //   </div>
-        // </div>
-      ))}
-    </>
-  );
-}
+      <Pagination
+        count={count}
+        size="large"
+        page={page}
+        variant="outlined"
+        shape="rounded"
+        onChange={handleData}
+      />
 
-function Tags({ data }) {
-  return (
-    <div className="story--tag-box">
-      {data.length > 0 ? (
-        data.map((item, index) => (
-          <button className="story--tag" key={index}>
-            {item}
-          </button>
-        ))
-      ) : (
-        <button className="story--tag">NOTAG</button>
-      )}
-    </div>
+      <ul>
+        {data.map((item, index) => (
+          <li key={index}>
+            <Story
+              order={item.order}
+              title={item.storyTitle}
+              content={item.storyContent}
+              tags={item.storyTag}
+            />
+          </li>
+        ))}
+      </ul>
+
+      <Pagination
+        count={count}
+        size="large"
+        page={page}
+        variant="outlined"
+        shape="rounded"
+        onChange={handleData}
+      />
+    </>
   );
 }
