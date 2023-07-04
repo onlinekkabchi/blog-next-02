@@ -5,17 +5,35 @@ ul li {
   list-style: none;
 }
 
-.story {
-  margin-block: 10px;
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-
 body {
+  font-family: "NEXON Lv1 Gothic OTF";
   margin: 0;
   padding: 2%;
 }
 
 header {
+  display: flex;
+  align-items: flex-start;
   padding-block: 5px;
+  margin-bottom: 3%;
+}
+header span {
+  padding-left: 20px;
+}
+header span h1 {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+header span p {
+  margin: 0;
+  font-weight: 600;
 }
 
 footer {
@@ -26,6 +44,11 @@ footer {
   font-size: 12px;
   padding-top: 5%;
   padding-bottom: 10%;
+}
+
+svg {
+  margin-top: 2px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

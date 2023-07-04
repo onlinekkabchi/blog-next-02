@@ -1,3 +1,3 @@
 export default function Loading() {
-  return <div>Loading...</div>;
+  return <div>2초 걸려요... Loading...</div>;
 }
