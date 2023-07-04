@@ -29,10 +29,11 @@ const AccordionDetailComponent = styled(AccordionDetails)(({ theme }) => ({
 export default async function Story({ order, title, content, tags }) {
   const shareData = {
     title: "짧은괴담블로그",
-    text: `${title} + ${content}`,
+    text: title,
   };
 
   const sendMessage = async () => {
+    console.log("share");
     if (typeof navigator.share === "undefined") {
       return;
     }
@@ -65,7 +66,7 @@ export default async function Story({ order, title, content, tags }) {
           paddingTop={3}
           paddingBottom={1}
         >
-          <Box paddingLeft={1} paddingRight={2}>
+          <Box paddingLeft={1} paddingRight={2} onClick={() => sendMessage()}>
             <svg width="25px" height="25px" viewBox="0 0 25 25" fill="none">
               <g
                 xmlns="http://www.w3.org/2000/svg"
