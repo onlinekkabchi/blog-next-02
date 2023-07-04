@@ -27,6 +27,8 @@ export default async function StoryBox() {
         .then((res) => setData(res.result));
     } catch (error) {
       console.log("Error:", error.message);
+    } finally {
+      console.log(data);
     }
   };
 
