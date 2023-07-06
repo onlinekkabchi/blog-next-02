@@ -23,6 +23,11 @@ header {
   padding-block: 5px;
   margin-bottom: 3%;
 }
+header a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 header span {
   padding-left: 20px;
 }

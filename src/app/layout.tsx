@@ -26,8 +26,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <header>
           <SideMenu />
           <span>
-            <h1>짧은괴담블로그</h1>
-            <p>ScaryShortStory</p>
+            <a href="/">
+              <h1>짧은괴담블로그</h1>
+              <p>ScaryShortStory</p>
+            </a>
           </span>
         </header>
         <main>
