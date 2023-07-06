@@ -46,7 +46,11 @@ export default async function Page({ params: { order } }) {
         body: JSON.stringify(order),
       })
         .then((res) => res.json())
-        .then((res) => setData(res.result));
+        .then((res) =>
+          res.result !== null
+            ? setData(res.result)
+            : alert("내용을 받아올 수 없습니다.")
+        );
     } catch (error) {
       console.log("Error:", error.message);
     }

@@ -24,7 +24,9 @@ export async function POST(req, res) {
       status: 200,
     });
   } catch (err) {
-    return new Response(JSON.stringify({ Error: err }), { status: 500 });
+    return new Response(JSON.stringify({ Error: err, result: null }), {
+      status: 500,
+    });
   } finally {
     await client.close();
   }
