@@ -36,7 +36,6 @@ export default async function Story({ order, title, content, tags }) {
         webUrl: `https://blog-next-02.vercel.app/story/${order}`,
       },
     });
-    // console.log("share");
     // if (typeof navigator.share === "undefined") {
     //   return;
     // }

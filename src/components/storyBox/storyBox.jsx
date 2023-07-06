@@ -11,24 +11,22 @@ export default async function StoryBox() {
   const PER_PAGE = 10;
   const count = Math.ceil(data.length / PER_PAGE);
 
-  const handleData = async () => {
-    try {
-      await fetch("/api/story")
-        // .then((res) => console.log(res));
-        .then((res) => res.json())
-        .then((res) => setData(res.result));
-    } catch (error) {
-      console.log("Error:", error.message);
-    } finally {
-      console.log(data);
-    }
-  };
+  // const handleData = async () => {
+  //   try {
+  //     await fetch("/api/story")
+  //       .then((res) => res.json())
+  //       .then((res) => setData(res.result));
+  //   } catch (error) {
+  //     console.log("Error:", error.message);
+  //   } finally {
+  //     console.log(data);
+  //   }
+  // };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         await fetch("/api/story")
-          // .then((res) => console.log(res));
           .then((res) => res.json())
           .then((res) => setData(res.result));
       } catch (error) {
@@ -47,7 +45,7 @@ export default async function StoryBox() {
         page={page}
         variant="outlined"
         shape="rounded"
-        onChange={handleData}
+        // onChange={handleData}
       />
 
       <ul>
@@ -69,7 +67,7 @@ export default async function StoryBox() {
         page={page}
         variant="outlined"
         shape="rounded"
-        onChange={handleData}
+        // onChange={handleData}
       />
     </>
   );
