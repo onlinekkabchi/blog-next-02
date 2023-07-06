@@ -8,7 +8,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, styled } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import { useEffect } from "react";
 
 const AccordionComponent = styled((props) => (
   <Accordion disableGutters elevation={0} square {...props} />
@@ -31,10 +30,10 @@ export default async function Story({ order, title, content, tags }) {
   const sendMessage = async () => {
     window.Kakao.Share.sendDefault({
       objectType: "text",
-      text: "1. " + title + "2. " + content,
+      text: title,
       link: {
-        mobileWebUrl: "https://blog-next-02.vercel.app",
-        webUrl: "https://blog-next-02.vercel.app",
+        mobileWebUrl: `https://blog-next-02.vercel.app/story/${order}`,
+        webUrl: `https://blog-next-02.vercel.app/story/${order}`,
       },
     });
     // console.log("share");
