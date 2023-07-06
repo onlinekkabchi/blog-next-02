@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Stack from "@mui/material/Stack";
 import StoryBox from "../components/storyBox/storyBox";
 import { createTheme } from "@mui/material";
@@ -24,6 +25,13 @@ const theme = createTheme({
 });
 
 export default async function Home() {
+  useEffect(() => {
+    if (!window.Kakao.Auth) {
+      window.Kakao.init("000405df46f6f17c190d9be7febdbd24");
+    }
+    console.log(window.Kakao);
+  }, []);
+
   return (
     <>
       <ThemeProvider theme={theme}>
