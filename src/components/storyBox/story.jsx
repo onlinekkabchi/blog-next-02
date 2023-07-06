@@ -31,7 +31,7 @@ export default async function Story({ order, title, content, tags }) {
   const sendMessage = async () => {
     window.Kakao.Share.sendDefault({
       objectType: "text",
-      text: title,
+      text: "1. " + title + "2. " + content,
       link: {
         mobileWebUrl: "https://blog-next-02.vercel.app",
         webUrl: "https://blog-next-02.vercel.app",
