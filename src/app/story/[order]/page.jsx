@@ -43,8 +43,8 @@ export default async function Page({ params: { order } }) {
     fetchData(order);
   }, []);
 
-  if (data === undefined) {
-    return <div>대기중...</div>;
+  if (data === "") {
+    return <div></div>;
   }
 
   return (
