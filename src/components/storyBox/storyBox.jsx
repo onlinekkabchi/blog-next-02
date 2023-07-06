@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Story from "./story.jsx";
-import { Box } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import usePagination from "@mui/material/usePagination/usePagination.js";
 
@@ -11,13 +10,6 @@ export default async function StoryBox() {
   const [data, setData] = useState([]);
   const PER_PAGE = 10;
   const count = Math.ceil(data.length / PER_PAGE);
-
-  const _DATA = usePagination(data, PER_PAGE);
-
-  // const handleChange = (e, p) => {
-  //   setPage(p);
-  //   _DATA.jump(p);
-  // };
 
   const handleData = async () => {
     try {
