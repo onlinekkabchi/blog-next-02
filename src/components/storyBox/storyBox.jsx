@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Story from "./story.jsx";
+import { Grid } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import usePagination from "@mui/material/usePagination/usePagination.js";
 
@@ -48,18 +49,18 @@ export default async function StoryBox() {
         onChange={handleData}
       />
 
-      <ul>
+      <Grid container spacing={2} marginY={2}>
         {data.map((item, index) => (
-          <li key={index}>
+          <Grid key={index} item>
             <Story
               order={item.order}
               title={item.storyTitle}
               content={item.storyContent}
               tags={item.storyTag}
             />
-          </li>
+          </Grid>
         ))}
-      </ul>
+      </Grid>
 
       <Pagination
         count={count}

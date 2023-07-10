@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import Stack from "@mui/material/Stack";
 import StoryBox from "../components/storyBox/storyBox";
-import { createTheme } from "@mui/material";
+import { Stack, createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 
 const theme = createTheme({
@@ -35,9 +34,7 @@ export default async function Home() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Stack direction="column">
-          <StoryBox />
-        </Stack>
+        <StoryBox />
       </ThemeProvider>
     </>
   );
