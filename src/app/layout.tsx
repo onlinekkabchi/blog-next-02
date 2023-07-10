@@ -24,9 +24,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         ></script>
       </head>
       <body className="flex flex-col px-10">
-        <header className="flex flex-col justify-between py-2">
+        <header className="flex flex-col justify-between ">
           {/* <SideMenu /> */}
-          <span className="flex justify-end space-x-4">
+          <span className="flex justify-end space-x-4 py-4">
             <svg width="30px" height="30px" viewBox="0 0 20 20" fill="none">
               <path
                 fill-rule="evenodd"
@@ -97,7 +97,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </g>
             </svg>
           </span>
-          <span>
+          <span className="py-2">
             <a href="/">
               <h1 className="text-3xl font-bold">짧은괴담블로그</h1>
               <p>ScaryShortStory</p>

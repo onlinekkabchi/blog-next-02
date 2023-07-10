@@ -9,21 +9,11 @@ const TypoComponent = styled(Typography)(({ theme }) => {
 
 export default async function Story({ order, title, content, tags }) {
   const sendMessage = async () => {
-    window.Kakao.Share.sendDefault({
-      objectType: "feed",
-      content: {
+    window.Kakao.Share.createCustumButton({
+      templateId: 95738,
+      templateArgs: {
         title: title,
         description: content,
-        imageUrl: "",
-        link: {
-          mobileWebUrl: `https://blog-next-02.vercel.app`,
-          webUrl: `https://blog-next-02.vercel.app`,
-        },
-        // itemContent: {
-        //   profileText: "짧은괴담블로그",
-        //   profileImageUrl:
-        //     "http://k.kakaocdn.net/dn/buCTiX/btsmz1EjSLi/csGa0CIa1ONkQvIKw2Aen1/kakaolink40_original.jpg",
-        // },
       },
     });
   };
