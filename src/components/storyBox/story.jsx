@@ -8,12 +8,22 @@ const TypoComponent = styled(Typography)(({ theme }) => {
 });
 
 export default async function Story({ order, title, content, tags }) {
+  const [display, setDisplay] = useState(false);
+
+  const handleDisplay = () => {
+    display ? setDisplay(false) : setDisplay(true);
+  };
+
   const sendMessage = async () => {
-    window.Kakao.Share.createCustumButton({
-      templateId: 95738,
-      templateArgs: {
+    window.kakao.Share.sendDefault({
+      objectType: "feed",
+      content: {
         title: title,
         description: content,
+        link: {
+          mobileWebUrl: "https://blog-next-02.vercel.app",
+          webUrl: "https://blog-next-02.vercel.app",
+        },
       },
     });
   };
@@ -26,14 +36,12 @@ export default async function Story({ order, title, content, tags }) {
         justifyContent: "space-between",
         minWidth: "200px",
         maxWidth: "300px",
-        height: "250px",
+        // minHeight: "250px",
       }}
     >
       <CardContent
+        onClick={() => handleDisplay()}
         sx={{ overflow: "scroll", cursor: "pointer" }}
-        // onClick={() => {
-        //   handleColor();
-        // }}
       >
         <Grid>
           <Typography

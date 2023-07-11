@@ -40,6 +40,7 @@ export default async function StoryBox() {
 
   return (
     <>
+      {/* {children} */}
       <Pagination
         count={count}
         size="large"
@@ -49,7 +50,7 @@ export default async function StoryBox() {
         onChange={handleData}
       />
 
-      <Grid container spacing={2} marginY={2}>
+      <Grid height="100vh" container direction="column" spacing={2} marginY={2}>
         {data.map((item, index) => (
           <Grid key={index} item>
             <Story

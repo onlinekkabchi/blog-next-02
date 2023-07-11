@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import StoryBox from "../components/storyBox/storyBox";
 import { Stack, createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+import { redirect } from "next/dist/server/api-utils";
 
 const theme = createTheme({
   typography: {
@@ -39,3 +40,32 @@ export default async function Home() {
     </>
   );
 }
+
+// import Story from "../components/storyBox/story";
+// import StoryBox from "../components/storyBox/storyBox";
+
+// async function heroes() {
+//   const res = await fetch(
+//     "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
+//   );
+
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+
+//   return res.json();
+// }
+
+// export default async function Home() {
+//   const data = await heroes();
+
+//   return (
+//     <div>
+//       <StoryBox>
+//         {data.members.map((item) => (
+//           <Story title={item.name} content={item.secretIdentity} />
+//         ))}
+//       </StoryBox>
+//     </div>
+//   );
+// }
