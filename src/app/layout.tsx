@@ -1,8 +1,5 @@
 import "../styles/style.css";
 import "../styles/globals.css";
-import { Suspense } from "react";
-import Loading from "./loading";
-import SideMenu from "../components/sideMenu";
 
 // export const metadata = {
 //   title: "Scary Short Story Blog",
@@ -27,38 +24,48 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <header className="flex flex-col justify-between ">
           {/* <SideMenu /> */}
           <span className="flex justify-end space-x-4 py-4">
-            <svg width="30px" height="30px" viewBox="0 0 20 20" fill="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5.5 11.1455C5.49956 8.21437 7.56975 5.69108 10.4445 5.11883C13.3193 4.54659 16.198 6.08477 17.32 8.79267C18.4421 11.5006 17.495 14.624 15.058 16.2528C12.621 17.8815 9.37287 17.562 7.3 15.4895C6.14763 14.3376 5.50014 12.775 5.5 11.1455Z"
-                stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M15.989 15.4905L19.5 19.0015"
-                stroke="#000000"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <svg
+            <div className="flex">
+              <input type="text" className="bg-slate-100" />
+              <svg
+                width="30px"
+                height="30px"
+                className="bg-slate-100"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M5.5 11.1455C5.49956 8.21437 7.56975 5.69108 10.4445 5.11883C13.3193 4.54659 16.198 6.08477 17.32 8.79267C18.4421 11.5006 17.495 14.624 15.058 16.2528C12.621 17.8815 9.37287 17.562 7.3 15.4895C6.14763 14.3376 5.50014 12.775 5.5 11.1455Z"
+                  stroke="#000000"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M15.989 15.4905L19.5 19.0015"
+                  stroke="#000000"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+
+            {/* <svg
               width="30px"
               height="30px"
               viewBox="-1 -2 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               stroke="#000000"
-              stroke-width="2"
+              strokeWidth="2"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 <path
@@ -66,20 +73,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   fill="#ffffff"
                 ></path>
               </g>
-            </svg>
+            </svg> */}
             <svg
               width="30px"
               height="30px"
               viewBox="0 -2 25 25"
               fill="none"
               stroke="#000000"
-              stroke-width="1.8"
+              strokeWidth="1.8"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 <path

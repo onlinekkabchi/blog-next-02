@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import StoryBox from "../components/storyBox/storyBox";
-import { Stack, createTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 
 const theme = createTheme({

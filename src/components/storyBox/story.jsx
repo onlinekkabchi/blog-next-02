@@ -9,11 +9,11 @@ const TypoComponent = styled(Typography)(({ theme }) => {
 
 export default async function Story({ order, title, content, tags }) {
   const sendMessage = async () => {
-    window.Kakao.Share.createCustumButton({
+    window.Kakao.Share.sendCustom({
       templateId: 95738,
       templateArgs: {
-        title: title,
-        description: content,
+        storyTitle: title,
+        storyContent: content,
       },
     });
   };
