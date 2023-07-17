@@ -10,7 +10,7 @@ const client = new MongoClient(uri, {
   },
 });
 
-export async function POST(req) {
+export async function POST(req, res) {
   const { gt, lt } = await req.json();
   console.log(gt, lt);
 
