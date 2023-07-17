@@ -10,16 +10,13 @@ const client = new MongoClient(uri, {
   },
 });
 
-export async function POST(req, res) {
-  const { gt, lt } = await req.json();
-  console.log(gt, lt);
+export async function GET(req, res) {
+  // const { gt, lt } = await req.json();
+  // console.log(gt, lt);
 
   try {
     const conn = await client.db("story").collection("short_story");
-    const result = await conn
-      .find({ order: { $gt: gt, $lt: lt } })
-      // .limit(10)
-      .toArray();
+    const result = await conn.find().limit(10).toArray();
 
     return new Response(JSON.stringify({ result: result }), {
       status: 200,

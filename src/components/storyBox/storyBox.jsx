@@ -12,10 +12,7 @@ export default async function StoryBox() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await fetch("/api/story", {
-          method: "POST",
-          body: JSON.stringify({ gt: 0, lt: 30 }),
-        })
+        await fetch("/api/story")
           .then((res) => res.json())
           .then((res) => setData(res.result));
       } catch (error) {
