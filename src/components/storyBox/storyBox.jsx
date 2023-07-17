@@ -2,32 +2,20 @@
 
 import { useEffect, useState } from "react";
 import Story from "./story.jsx";
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
-import usePagination from "@mui/material/usePagination/usePagination.js";
 
 export default async function StoryBox() {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
-  const PER_PAGE = 10;
-  const count = Math.ceil(data.length / PER_PAGE);
-
-  const handleData = async () => {
-    try {
-      await fetch("/api/story")
-        .then((res) => res.json())
-        .then((res) => setData(res.result));
-    } catch (error) {
-      console.log("Error:", error.message);
-    } finally {
-      console.log(data);
-    }
-  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await fetch("/api/story")
+        await fetch("/api/story", {
+          method: "POST",
+          body: JSON.stringify({ gt: 0, lt: 30 }),
+        })
           .then((res) => res.json())
           .then((res) => setData(res.result));
       } catch (error) {
@@ -40,36 +28,18 @@ export default async function StoryBox() {
 
   return (
     <>
-      <Pagination
-        count={count}
-        size="large"
-        page={page}
-        variant="outlined"
-        shape="rounded"
-        onChange={handleData}
-      />
-
-      <Grid container spacing={2} marginY={2}>
+      <Box marginY={2}>
         {data.map((item, index) => (
-          <Grid key={index} item>
-            <Story
-              order={item.order}
-              title={item.storyTitle}
-              content={item.storyContent}
-              tags={item.storyTag}
-            />
-          </Grid>
+          <Story
+            key={index}
+            index={index}
+            order={item.order}
+            title={item.storyTitle}
+            content={item.storyContent}
+            tags={item.storyTag}
+          />
         ))}
-      </Grid>
-
-      <Pagination
-        count={count}
-        size="large"
-        page={page}
-        variant="outlined"
-        shape="rounded"
-        onChange={handleData}
-      />
+      </Box>
     </>
   );
 }
