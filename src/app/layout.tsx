@@ -20,6 +20,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
           crossOrigin="anonymous"
         ></script>
       </head>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHPH8NRJ5E"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VHPH8NRJ5E');
+      </script>
       <body className="flex flex-col px-10">
         <header className="flex flex-col justify-between ">
           {/* <SideMenu /> */}
@@ -63,6 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             onlinekkabchi github link
           </a>
         </footer>
+
       </body>
     </html>
   );
