@@ -15,8 +15,8 @@ export async function GET(req, res) {
   // console.log(gt, lt);
 
   try {
-    const conn = await client.db("story").collection("short_story");
-    const result = await conn.find().limit(10).toArray();
+    const conn = await client.db("story").collection("a_tags");
+    const result = await conn.find().limit(5).toArray();
 
     return new Response(JSON.stringify({ result: result }), {
       status: 200,

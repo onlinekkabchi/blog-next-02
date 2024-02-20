@@ -1,5 +1,7 @@
 "use client";
 
+import "./story-box.css";
+
 import { useEffect, useState } from "react";
 import Story from "./story.jsx";
 import { Grid, Box } from "@mui/material";
@@ -24,19 +26,35 @@ export default async function StoryBox() {
   }, []);
 
   return (
-    <>
-      <Box marginY={2}>
-        {data.map((item, index) => (
-          <Story
-            key={index}
-            index={index}
-            order={item.order}
-            title={item.storyTitle}
-            content={item.storyContent}
-            tags={item.storyTag}
-          />
-        ))}
-      </Box>
-    </>
+    <ul className="story-box">
+      {data.map((item, index) => (
+        <li key={item.order || index}>
+          <a href={item.href} target="blank">
+            <div dangerouslySetInnerHTML={{ __html: item.innerHTML }} />
+          </a>
+
+          {/* <div>{item.storyTitle}</div>
+          <div>{item.storyContent}</div> */}
+          {/* <div>
+            {item.storyTag.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+          </div> */}
+        </li>
+      ))}
+    </ul>
+    //   <Box marginY={2}>
+    //     {data.map((item, index) => (
+    //       <Story
+    //         key={index}
+    //         index={index}
+    //         order={item.order}
+    //         title={item.storyTitle}
+    //         content={item.storyContent}
+    //         tags={item.storyTag}
+    //       />
+    //     ))}
+    //   </Box>
+    // </>
   );
 }

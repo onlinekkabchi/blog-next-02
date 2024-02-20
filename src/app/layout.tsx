@@ -1,10 +1,10 @@
 import "../styles/style.css";
 import "../styles/globals.css";
 
-// export const metadata = {
-//   title: "Scary Short Story Blog",
-//   description: "Scary Short Story Blog",
-// };
+export const metadata = {
+  title: "Scary Short Story Blog",
+  description: "Scary Short Story Blog",
+};
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="flex flex-col px-10">
         <header className="flex flex-col justify-between ">
           {/* <SideMenu /> */}
-          <span className="flex justify-end space-x-4 py-4">
+          {/* <span className="flex justify-end space-x-4 py-4">
             <div className="flex">
               <input type="text" className="bg-slate-100" />
               <svg width="30px" height="30px" viewBox="0 0 20 20" fill="none">
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 />
               </svg>
             </div>
-          </span>
+          </span> */}
           <span className="py-2">
             <a href="/">
               <h1 className="text-3xl font-bold">짧은괴담블로그</h1>
@@ -55,9 +55,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </header>
         <main className="py-5">{children}</main>
         <footer>
-          <aside>
-            <p>seo box</p>
-          </aside>
           <p>onlinekkabchi@gmail.com</p>
           <a className="underline" href="https://github.com/onlinekkabchi">
             onlinekkabchi github link

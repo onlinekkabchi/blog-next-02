@@ -1,0 +1,5 @@
+.story-box > li {
+  border: 1px solid grey;
+  padding: 5px;
+  margin-block: 5px;
+}

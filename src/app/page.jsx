@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import StoryBox from "../components/storyBox/storyBox";
+
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+
+import StoryBox from "../components/storyBox/storyBox";
+import ChatBot from "../components/chatBot/chatBot";
 
 const theme = createTheme({
   typography: {
@@ -32,10 +35,18 @@ export default async function Home() {
   }, []);
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <StoryBox />
-      </ThemeProvider>
-    </>
+    <div>
+      <StoryBox />
+      chatbot
+      <ChatBot />
+    </div>
   );
+
+  // return (
+  //   <>
+  //     <ThemeProvider theme={theme}>
+  //       <StoryBox />
+  //     </ThemeProvider>
+  //   </>
+  // );
 }
