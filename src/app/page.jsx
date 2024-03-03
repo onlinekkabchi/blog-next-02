@@ -37,8 +37,8 @@ export default async function Home() {
   return (
     <div>
       <StoryBox />
-      chatbot
-      <ChatBot />
+      {/* <h2>채팅박스</h2>
+      <ChatBot /> */}
     </div>
   );
 

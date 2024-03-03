@@ -1,0 +1,29 @@
+.chat-bot form input[type="text"] {
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.chat-bot form ul {
+  width: 300px;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 15px;
+  box-shadow: 2px 5px 5px #ebebeb;
+  margin-block: 5px;
+  padding: 10px;
+}
+
+.chat-bot form ul::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+  width: 0px; /* This line doesn't have any effect, as scrollbar is hidden */
+}
+
+.chat-msg--bot {
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+.chat-msg--user {
+  background-color: white;
+  border-radius: 10px;
+}
